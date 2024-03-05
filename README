@@ -2,30 +2,33 @@
 
 This is coding assessment assigned by Terence.
 
-# Running the project
+## Running the project
 
 Follow these steps to run the project.
 
-## Requirements
+### Requirements
 
 Python version 3.11 or higher.
 
-## Setup virtual environment
+### Setup virtual environment
 
 if **poetry** installed,
-    ```poetry env use python
-    poetry shell
-    poetry install
-    ```
+```
+poetry env use python
+poetry shell
+poetry install
+```
 with default python venv module,
-    ```python -m venv venv
-    .\venv\Scripts\activate # on Windows
-    source ./venv/bin/activate # on Linux
-    python -m pip install -r requirements.txt
-    ```
+```
+python -m venv venv
+.\venv\Scripts\activate # on Windows
+source ./venv/bin/activate # on Linux
+python -m pip install -r requirements.txt
+```
 
-## Run the app
+### Run the app
 
 Uvicorn is run programatically inside main.py
-    ```python main.py
-    ```
+```
+python main.py
+```
