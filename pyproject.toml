@@ -3,7 +3,7 @@ name = "fastapi-assignment"
 version = "0.1.0"
 description = "FastAPI mini-assignment assigned by Terence."
 authors = ["Win Htet Aung <whaung1998@gmail.com>"]
-readme = "README"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
