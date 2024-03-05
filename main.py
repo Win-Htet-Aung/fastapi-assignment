@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 from pydantic import BaseModel
 import uvicorn
 
@@ -11,7 +11,7 @@ class SumResponse(BaseModel):
     error: str | None
 
 @app.post('/sum')
-async def root(upto: int):
+async def natural_sum(upto: int = Query(..., description="a natural number")) -> SumResponse:
     if upto < 1:
         return SumResponse(success=False, value=None, error="'upto' must be a natural number.")
     value = sum(range(1, upto+1))
