@@ -15,5 +15,7 @@ jobs:
         
       - name: Test Contexts
         shell: bash
-        run: echo ${{ secrets.SECRET_WORD }}
+        run: |
+          echo ${{ secrets.SECRET_WORD }} &&
+          echo ${{ github.event.repository.name }}
         
