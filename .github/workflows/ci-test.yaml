@@ -25,4 +25,4 @@ jobs:
           echo ${{ github.repository.full_name }} &&
           echo ${{ github.actor }} &&
           echo ${{ github.event.commits.message }} &&
-          echo {% raw %}"${{ github.event.commits[0].message }}"{% endraw %}
+          echo ${{ join(github.event.commits.*.message, '\n') }}
