@@ -25,5 +25,4 @@ jobs:
           echo ${{ github.repository.full_name }} &&
           echo ${{ github.actor }} &&
           echo ${{ github.event.commits.message }} &&
-          echo ${{ github.event.commits[0].message }}
-        
+          echo ${{ github.event.commits[0].message }}        
