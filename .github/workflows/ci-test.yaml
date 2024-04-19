@@ -52,7 +52,7 @@ jobs:
 
       - name: Process Commit Message
         env:
-          response: ${{ toJson(github.event.commits[0]) }}
+          response: ${{ github.event.head_commit }}
         run: |
           commits=$(echo "$response" | jq -r '.commits | map("`\(.commit.author.name)` - \(.commit.message | gsub("[\\x00-\\x1F]"; "") | gsub("\""; ""))") | join("\\n\\n")')
           cleaned_commits=$(echo "$commits" | sed 's/[\x00-\x1F]//g')
