@@ -25,6 +25,8 @@ jobs:
         with:
           format: ${{ steps.time-fmt.outputs.fmt }}
           utcOffset: "+08:00"
+      - run: |
+          fmt="YYYY-MM-DD HH:mm:ss"
 
       - name: Get PR Title
         uses: actions/github-script@v7
