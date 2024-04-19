@@ -39,4 +39,4 @@ jobs:
           echo ${{ github.repository.full_name }} &&
           echo ${{ github.actor }} &&
           echo ${{ github.event.pull_request.title }} &&
-          echo ${{ fromJson(steps.get_pr_data.outputs.result).title }}
+          echo ${{ fromJson(steps.pr-data.outputs.result).title }}
