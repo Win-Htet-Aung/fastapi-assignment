@@ -49,3 +49,13 @@ jobs:
           echo ${{ fromJson(steps.pr-data.outputs.result).title }} &&
           echo ${{ steps.current-time.outputs.formattedTime }} &&
           echo ${{ github.event.pull_request.number }}
+
+      - name: Process Commit Message
+        env:
+          response: ${{ github.event.commits[0].message }}
+        run: |
+          commits=$(echo "$response" | jq -r '.commits | map("`\(.commit.author.name)` - \(.commit.message | gsub("[\\x00-\\x1F]"; "") | gsub("\""; ""))") | join("\\n\\n")')
+          cleaned_commits=$(echo "$commits" | sed 's/[\x00-\x1F]//g')
+          formatted_commits=$(echo "$cleaned_commits" | awk '{ print " \n " $0 }')
+          echo -e "$formatted_commits"
+
