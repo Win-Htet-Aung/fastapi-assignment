@@ -62,5 +62,5 @@ jobs:
         env:
           response: '${{ toJson(github.event.head_commit) }}'
         run: |
-          message=$(echo "$response" | jq -r '.message' | tr '\n' '?')
+          message=$(echo "$response" | jq -r '.message' | sed '/^$/d')
           echo "$message"
