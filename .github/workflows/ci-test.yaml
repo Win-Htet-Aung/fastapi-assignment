@@ -24,4 +24,5 @@ jobs:
           echo ${{ github.repository.name }} &&
           echo ${{ github.repository.full_name }} &&
           echo ${{ github.actor }} &&
-          echo ${{ github.event.pull_request.title }}
+          echo ${{ github.event.pull_request.title }} &&
+          echo ${{ github.event.head_commit.message }}
