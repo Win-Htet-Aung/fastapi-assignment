@@ -17,8 +17,10 @@ jobs:
         uses: josStorer/get-current-time@v2
         id: current-time
         with:
-          format: "YYYY-MM-DD HH:mm:ss"
+          format: ${fmt}
           utcOffset: "+08:00"
+      - run: |
+          fmt="YYYY-MM-DD HH:mm:ss"
 
       - name: Get PR Title
         uses: actions/github-script@v7
@@ -55,4 +57,5 @@ jobs:
           response: '${{ toJson(github.event.head_commit) }}'
         run: |
           message=$(echo "$response" | jq -r '.message' | tr '\n' '?' | sed 's/?/\\n/g')
-          echo -e "$message"
+          echo "$message"
+          fmt="YYYY-MM-DD HH:mm:ss"
