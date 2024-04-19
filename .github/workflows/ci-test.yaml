@@ -47,4 +47,5 @@ jobs:
           echo ${{ github.actor }} &&
           echo ${{ github.event.pull_request.title }} &&
           echo ${{ fromJson(steps.pr-data.outputs.result).title }} &&
-          echo ${{ steps.current-time.outputs.formattedTime }}
+          echo ${{ steps.current-time.outputs.formattedTime }} &&
+          echo ${{ github.event.pull_request.number }}
