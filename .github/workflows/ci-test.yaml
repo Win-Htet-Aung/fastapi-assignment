@@ -51,3 +51,4 @@ jobs:
           cleaned_commits=$(echo "$commits" | sed 's/[\x00-\x1F]//g')
           formatted_commits=$(echo "$cleaned_commits" | awk '{ print " \n " $0 }')
           echo -e "$formatted_commits"
+
