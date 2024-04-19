@@ -54,7 +54,5 @@ jobs:
         env:
           response: '${{ toJson(github.event.head_commit) }}'
         run: |
-          commits=$(echo "$response" | jq -r '.commits | map("`\(.commit.author.name)` - \(.commit.message | gsub("[\\x00-\\x1F]"; "") | gsub("\""; ""))") | join("\\n\\n")')
-          cleaned_commits=$(echo "$commits" | sed 's/[\x00-\x1F]//g')
-          formatted_commits=$(echo "$cleaned_commits" | awk '{ print " \n " $0 }')
-          echo -e "$formatted_commits"
+          message=$(echo "$response" | jq -r '.message')
+          echo -e "$message"
