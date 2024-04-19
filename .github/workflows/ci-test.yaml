@@ -22,6 +22,7 @@ jobs:
           echo ${{ github.event.repository.html_url }} &&
           echo ${{ github.repositoryUrl }} &&
           echo ${{ github.repository.name }} &&
+          
           echo ${{ github.repository.full_name }} &&
           echo ${{ github.actor }} &&
           echo ${{ github.event.pull_request.title }} &&
